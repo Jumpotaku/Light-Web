@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- プログラマーのラベルとイメージビュー＋リンクボタン -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="96dp"
+            android:layout_height="104dp"
+            android:contentDescription="@string/image_desc"
+            android:src="@drawable/aaa" />
+
+        <TextView
+            android:id="@+id/programmerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ジャンオタ"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp" />
+
+        <!-- 1つ目のボタン：Twitter（またはX）のリンク -->
+        <ImageButton
+            android:id="@+id/btnUrl1"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Twitter Button"
+            android:onClick="openTwitterUrl"
+            android:scaleType="fitCenter"
+            android:src="@drawable/aa" />
+
+        <!-- 2つ目のボタン：YouTubeのリンク -->
+        <ImageButton
+            android:id="@+id/btnUrl2"
+            android:layout_width="44dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="YouTube Button"
+            android:onClick="openYoutubeUrl"
+            android:scaleType="fitCenter"
+            android:src="@drawable/a" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Chat GPT"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Copilot"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="gemini"
+        android:textSize="24sp" />
+
+    <!-- 開発者のメッセージ -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="開発者のメッセージ"
+        android:textSize="24sp" />
+
+    <!-- スクロール可能な入力欄 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/developerMessageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="私は古いスマホ 例えば Android 5.0 古いバージョンのスマホでブラウザを快適に見たいなと思い このアプリを作成しました このアプリはまだ発展途上ですが バージョンアップでどんどん と機能を追加する予定です 今後ともよろしくお願いします"
+            android:textSize="18sp"
+            android:minHeight="200dp"
+            android:maxHeight="300dp"
+            android:scrollbars="vertical"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background" />
+    </ScrollView>
+</LinearLayout>

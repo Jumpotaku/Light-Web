@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>野獣先輩を倒せ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; font-family: sans-serif; overflow: hidden; }
+
+        .background {
+          position: fixed;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: url('https://pbs.twimg.com/media/EsU3sSfVkAIh7oC.jpg') no-repeat center center/cover;
+          filter: blur(8px);
+          z-index: -1;
+        }
+
+        .screen {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          color: #fff;
+          text-align: center;
+          padding: 20px;
+          background-color: rgba(0,0,0,0.3);
+        }
+
+        #start-screen { display: flex; }
+
+        h1 { font-size: 3em; margin-bottom: 20px; }
+        h2 { margin-bottom: 15px; }
+        p { margin-bottom: 15px; }
+
+        button {
+          padding: 15px 30px;
+          font-size: 1.5em;
+          background-color: crimson;
+          border: none;
+          color: white;
+          cursor: pointer;
+          border-radius: 10px;
+          margin-top: 10px;
+        }
+        button:hover { background-color: darkred; }
+
+        #game-screen {
+          display: none;
+          flex-direction: column;
+        }
+
+        .score-board {
+          width: 100%;
+          padding: 10px;
+          background-color: rgba(0,0,0,0.6);
+          font-size: 1.2em;
+          text-align: center;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        .game-area {
+          flex: 1;
+          position: relative;
+        }
+
+        .enemy {
+          position: absolute;
+          cursor: pointer;
+          transition: top 0.8s ease, left 0.8s ease, width 0.8s ease;
+        }
+
+        #result-screen { display: none; flex-direction: column; }
+    </style>
+</head>
+<body>
+<div class="background"></div>
+
+<audio id="bg-music" src="aaa.mp3" loop></audio>
+
+<div class="screen" id="start-screen">
+    <h1>野獣先輩を倒せ</h1>
+    <button onclick="goToRules()">開始</button>
+</div>
+
+<div class="screen" id="rules-screen">
+    <h2>ルール説明</h2>
+    <p>
+        ・画面に現れる野獣先輩の画像をタップで+100点！<br>
+        ・目標スコアは100～5900の100の倍数でランダム！<br>
+        ・スコアが目標を超えたら即ゲームオーバー。<br>
+        ・3分以内にぴったり到達したらクリア！
+    </p>
+    <button onclick="startGame()">ゲームスタート！</button>
+</div>
+
+<div class="screen" id="game-screen">
+    <div class="score-board">
+        <span>目標スコア: <span id="target-score"></span></span>
+        <span>現在のスコア: <span id="current-score">0</span></span>
+        <span>残り時間: <span id="time-left">180</span>秒</span>
+    </div>
+    <div class="game-area" id="game-area"></div>
+</div>
+
+<div class="screen" id="result-screen">
+    <h2 id="result-message"></h2>
+    <button onclick="restartGame()">もう一回やる</button>
+</div>
+
+<script>
+    let currentScore = 0;
+    let targetScore = 0;
+    let timeLeft = 180;
+    let enemySpawnInterval, enemyMoveInterval, enemySizeInterval, gameTimer;
+    const gameArea = document.getElementById('game-area');
+    const bgMusic = document.getElementById('bg-music');
+
+    function goToRules() {
+      document.getElementById('start-screen').style.display = 'none';
+      document.getElementById('rules-screen').style.display = 'flex';
+    }
+
+    function startGame() {
+      document.getElementById('rules-screen').style.display = 'none';
+      document.getElementById('game-screen').style.display = 'flex';
+
+      currentScore = 0;
+      timeLeft = 180;
+      document.getElementById('current-score').textContent = currentScore;
+      document.getElementById('time-left').textContent = timeLeft;
+
+      // スコアは100〜5900（6000未満）
+      targetScore = (Math.floor(Math.random() * 59) + 1) * 100;
+      document.getElementById('target-score').textContent = targetScore;
+
+      bgMusic.currentTime = 0;
+      bgMusic.play();
+
+      gameArea.innerHTML = "";
+
+      // 敵20体/秒生成（50msごとに1体）
+      enemySpawnInterval = setInterval(spawnEnemy, 50);
+      enemyMoveInterval = setInterval(moveEnemies, 1000);
+      enemySizeInterval = setInterval(randomizeEnemySizes, 1000);
+      gameTimer = setInterval(decrementTime, 1000);
+    }
+
+    function spawnEnemy() {
+      const img = document.createElement('img');
+      img.src = 'https://pbs.twimg.com/media/EsU3sSfVkAIh7oC.jpg';
+      img.className = 'enemy';
+      let size = Math.floor(Math.random() * 71) + 50;
+      img.style.width = size + 'px';
+      const maxTop = gameArea.clientHeight - size;
+      const maxLeft = gameArea.clientWidth - size;
+      img.style.top = Math.random() * maxTop + 'px';
+      img.style.left = Math.random() * maxLeft + 'px';
+      img.onclick = function(e) {
+        e.stopPropagation();
+        addScore(100);
+      };
+      gameArea.appendChild(img);
+    }
+
+    function moveEnemies() {
+      const enemies = document.getElementsByClassName('enemy');
+      for (let enemy of enemies) {
+        const size = parseInt(enemy.style.width);
+        const maxTop = gameArea.clientHeight - size;
+        const maxLeft = gameArea.clientWidth - size;
+        enemy.style.top = Math.random() * maxTop + 'px';
+        enemy.style.left = Math.random() * maxLeft + 'px';
+      }
+    }
+
+    function randomizeEnemySizes() {
+      const enemies = document.getElementsByClassName('enemy');
+      for (let enemy of enemies) {
+        let newSize = Math.floor(Math.random() * 71) + 50;
+        enemy.style.width = newSize + 'px';
+      }
+    }
+
+    function addScore(amount) {
+      currentScore += amount;
+      document.getElementById('current-score').textContent = currentScore;
+      if (currentScore > targetScore) {
+        endGame(false);
+      }
+      if (currentScore === targetScore) {
+        endGame(true);
+      }
+    }
+
+    function decrementTime() {
+      timeLeft--;
+      document.getElementById('time-left').textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(gameTimer);
+        if (currentScore === targetScore) {
+          endGame(true);
+        } else {
+          endGame(false);
+        }
+      }
+    }
+
+    function endGame(cleared) {
+      clearInterval(enemySpawnInterval);
+      clearInterval(enemyMoveInterval);
+      clearInterval(enemySizeInterval);
+      clearInterval(gameTimer);
+      bgMusic.pause();
+      document.getElementById('game-screen').style.display = 'none';
+      document.getElementById('result-screen').style.display = 'flex';
+      document.getElementById('result-message').textContent = cleared
+        ? "ゲームクリア！おめでとう！"
+        : "ゲームオーバー…また挑戦してな";
+    }
+
+    function restartGame() {
+      document.getElementById('result-screen').style.display = 'none';
+      document.getElementById('start-screen').style.display = 'flex';
+    }
+</script>
+</body>
+</html>

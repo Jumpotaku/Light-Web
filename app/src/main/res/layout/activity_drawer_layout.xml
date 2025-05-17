@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".drawerLayout">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ここにメインのコンテンツ（例えばWebViewや他のレイアウト）を追加 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- ここにその他のレイアウト要素を配置 -->
+        </LinearLayout>
+
+        <!-- サイドメニュー（Drawer）を配置 -->
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent">
+            <!-- サイドメニューの内容 -->
+        </FrameLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

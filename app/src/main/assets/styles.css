@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    animation: fadeInIcons 1.5s ease-in-out;
+  }
+  
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .icon span {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ddd;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1);
+    background-color: #444;
+  }
+  
+  footer {
+    margin-top: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #search {
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 20px;
+    background-color: #333;
+    color: #fff;
+    width: 70%;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInIcons {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* スマートフォン向けの最適化 */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+  
+    .icons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .icon {
+      width: 80%;
+      margin-bottom: 15px;
+    }
+  
+    #search {
+      width: 70%;
+    }
+  
+    button {
+      width: 20%;
+    }
+  }
+  

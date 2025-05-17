@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="saveSettingsButton" type="id" />
+    <item name="LinearLayout" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="buttonLayout" type="id" />
+    <item name="developerMessageInput" type="id" />
+    <item name="btnUrl2" type="id" />
+    <item name="btnUrl1" type="id" />
+    <item name="imageView1" type="id" />
+    <item name="programmerLabel" type="id" />
+</resources>

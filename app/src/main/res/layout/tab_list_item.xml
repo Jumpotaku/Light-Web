@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/tabIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/language_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+        android:contentDescription="タブアイコン"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/tabName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="タブ名"
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="削除ボタン" />
+</LinearLayout>

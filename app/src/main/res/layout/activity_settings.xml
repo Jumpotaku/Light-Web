@@ -1,0 +1,87 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center">
+
+        <!-- JavaScript設定 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="JavaScriptを有効無効"
+            android:textSize="18sp" />
+
+        <Switch
+            android:id="@+id/jsEnabledSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JavaScript 有効"
+            android:checked="true"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Google簡易版設定 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="最初のホームを Google に変更する"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"/>
+
+        <Switch
+            android:id="@+id/switch_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google に設定する"
+            android:checked="false"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- 保存ボタン -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveSettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="設定を保存"
+            android:textSize="16sp"
+            android:theme="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="8dp"
+            app:iconPadding="8dp"
+            app:iconGravity="textStart" />
+
+        <!-- ライセンスボタン -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/licenseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ライセンス"
+            android:textSize="16sp"
+            android:theme="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="8dp"
+            app:iconPadding="8dp"
+            app:iconGravity="textStart" />
+
+        <!-- クレジットボタン -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/creditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="クレジット"
+            android:textSize="16sp"
+            android:theme="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="8dp"
+            app:iconPadding="8dp"
+            app:iconGravity="textStart" />
+
+    </LinearLayout>
+</ScrollView>
