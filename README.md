@@ -1,7 +1,7 @@
 # LightWeb 2.0
 
 A **lightweight and fast web browser** designed for **smooth browsing even on older Android devices**.  
-Supports **Android 5.0 (Lollipop) and above**.
+Supports **Android 6.0 and above**.
 
 This project is **open source**, allowing anyone to freely view and modify the source code.
 
@@ -9,9 +9,11 @@ This project is **open source**, allowing anyone to freely view and modify the s
 
 ## 📱 Screenshots
 
-![Screenshot 1](https://github.com/user-attachments/assets/5c50cb33-8225-4110-bdca-4a9aa7fb6bd0)  
-![Screenshot 2](https://github.com/user-attachments/assets/a0808f0b-db58-4f2f-9940-2258954eb6eb)  
-![Screenshot 3](https://github.com/user-attachments/assets/b4057a21-cb1b-4993-8def-aed045a991de)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5c50cb33-8225-4110-bdca-4a9aa7fb6bd0" width="30%" />
+  <img src="https://github.com/user-attachments/assets/a0808f0b-db58-4f2f-9940-2258954eb6eb" width="30%" />
+  <img src="https://github.com/user-attachments/assets/b4057a21-cb1b-4993-8def-aed045a991de" width="30%" />
+</p>
 
 ---
 
@@ -36,8 +38,8 @@ This project is **open source**, allowing anyone to freely view and modify the s
 
 This project is open source.
 
-- You can view and modify the source code freely  
-- Free to use for personal, learning, and modification purposes  
+- You can freely view and modify the source code  
+- Free for personal, learning, and modification use  
 - Pull requests and issues are welcome
 
 ---
