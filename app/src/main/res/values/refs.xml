@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="bg_icon_button" />
+    <drawable name="ic_code" />
+    <drawable name="ic_home" />
+    <drawable name="ic_save" />
+    <drawable name="ic_info" />
+    <drawable name="ic_people" />
+</resources>

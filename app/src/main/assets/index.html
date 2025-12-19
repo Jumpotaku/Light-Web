@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ライトウェブ2.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: -1;
+          filter: brightness(0.5);
+          transition: background-image 0.5s ease-in-out;
+        }
+
+        /* 設定ボタン */
+        .settings-btn {
+          position: fixed;
+          top: 16px;
+          right: 16px;
+          background-color: var(--md-sys-color-primary, #6750a4);
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          width: 48px;
+          height: 48px;
+          font-size: 20px;
+          cursor: pointer;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          transition: background-color 0.3s ease;
+        }
+        .settings-btn:hover {
+          background-color: #7f67be;
+        }
+
+        /* ポップアップダイアログ */
+        .dialog-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+        .dialog-overlay.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .dialog {
+          background: #1c1b1f;
+          color: #fff;
+          padding: 24px;
+          border-radius: 20px;
+          width: 90%;
+          max-width: 400px;
+          transform: translateY(50px);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        .dialog-overlay.active .dialog {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .dialog h2 {
+          margin-bottom: 16px;
+          color: var(--md-sys-color-primary, #6750a4);
+        }
+        .dialog button, .dialog select, .dialog input {
+          margin: 8px 0;
+          padding: 12px;
+          border-radius: 12px;
+          border: none;
+          width: 100%;
+          font-size: 1em;
+        }
+        .dialog button {
+          background: var(--md-sys-color-primary, #6750a4);
+          color: white;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .dialog button:hover {
+          background: #7f67be;
+        }
+    </style>
+</head>
+<body>
+<button class="settings-btn">⚙️</button>
+
+<div class="container">
+    <header>
+        <h1>Light Web 2.0</h1>
+    </header>
+
+    <section class="icons">
+        <a href="https://www.google.com" target="_blank" class="icon" id="google"><span>Google</span></a>
+        <a href="https://www.youtube.com" target="_blank" class="icon" id="youtube"><span>YouTube</span></a>
+        <a href="https://www.bilibili.com" target="_blank" class="icon" id="bilibili"><span>bilibili</span></a>
+        <a href="https://www.nicovideo.jp" target="_blank" class="icon" id="nicovideo"><span>ニコニコ</span></a>
+        <a href="https://mail.google.com" target="_blank" class="icon" id="gmail"><span>Gmail</span></a>
+    </section>
+
+    <footer>
+        <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" id="search" name="q" placeholder="Google 検索">
+            <button type="submit">検索</button>
+        </form>
+    </footer>
+</div>
+
+<!-- ポップアップ -->
+<div class="dialog-overlay" id="settingsDialog">
+    <div class="dialog">
+        <h2>設定</h2>
+        <label>ボタン色変更</label>
+        <input type="color" id="colorPicker">
+
+        <label>背景設定</label>
+        <select id="bgSelect">
+            <option value="random">ランダム（都市）</option>
+            <option value="akihabara">秋葉原</option>
+            <option value="tokyo">東京</option>
+            <option value="paris">パリ</option>
+            <option value="newyork">ニューヨーク</option>
+            <option value="upload">自分の画像を選択</option>
+        </select>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+
+        <button id="applySettings">適用</button>
+        <button onclick="closeDialog()">閉じる</button>
+    </div>
+</div>
+
+<script>
+    const API_KEY = "mM1N8_WeA0zLgqur9yVliCSNcrDOEs2M9Q-oOWqMUFA";
+    const COOKIE_NAME = "bg_images";
+
+    const settingsBtn = document.querySelector(".settings-btn");
+    const dialogOverlay = document.getElementById("settingsDialog");
+    const colorPicker = document.getElementById("colorPicker");
+    const bgSelect = document.getElementById("bgSelect");
+    const fileInput = document.getElementById("fileInput");
+
+    settingsBtn.addEventListener("click", () => {
+      dialogOverlay.classList.add("active");
+    });
+
+    function closeDialog() {
+      dialogOverlay.classList.remove("active");
+    }
+
+    // ボタン色変更
+    colorPicker.addEventListener("input", (e) => {
+      document.documentElement.style.setProperty("--md-sys-color-primary", e.target.value);
+    });
+
+    // 背景設定
+    document.getElementById("applySettings").addEventListener("click", async () => {
+      const choice = bgSelect.value;
+      if (choice === "upload") {
+        fileInput.click();
+        fileInput.onchange = (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const url = URL.createObjectURL(file);
+            document.body.style.backgroundImage = `url(${url})`;
+          }
+        };
+      } else {
+        let query = "city";
+        if (choice === "akihabara") query = "akihabara,japan,city";
+        if (choice === "tokyo") query = "tokyo,city";
+        if (choice === "paris") query = "paris,france";
+        if (choice === "newyork") query = "newyork,usa";
+
+        try {
+          const res = await fetch(`https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${API_KEY}`);
+          const data = await res.json();
+          if (data.urls?.full) {
+            document.body.style.backgroundImage = `url(${data.urls.full})`;
+          }
+        } catch (err) {
+          console.warn("背景取得失敗", err);
+        }
+      }
+      closeDialog();
+    });
+
+    // 初期背景
+    async function setRandomBg() {
+      try {
+        const res = await fetch(`https://api.unsplash.com/photos/random?query=city&orientation=landscape&client_id=${API_KEY}`);
+        const data = await res.json();
+        if (data.urls?.full) {
+          document.body.style.backgroundImage = `url(${data.urls.full})`;
+        }
+      } catch {
+        document.body.style.backgroundColor = "#000";
+      }
+    }
+    setRandomBg();
+</script>
+</body>
+</html>

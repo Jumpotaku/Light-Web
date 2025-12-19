@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- テーマに合わせた背景色 -->
+    <solid android:color="?attr/colorSurface" />
+    <!-- 丸みの強い角（32dp） -->
+    <corners android:radius="32dp" />
+    <!-- 内側の余白（必要に応じて調整してください） -->
+    <padding
+        android:left="16dp"
+        android:top="16dp"
+        android:right="16dp"
+        android:bottom="16dp" />
+</shape>

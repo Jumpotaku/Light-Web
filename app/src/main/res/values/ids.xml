@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="saveSettingsButton" type="id" />
+    <item name="LinearLayout" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="buttonLayout" type="id" />
+    <item name="developerMessageInput" type="id" />
+    <item name="btnUrl2" type="id" />
+    <item name="btnUrl1" type="id" />
+    <item name="imageView1" type="id" />
+    <item name="programmerLabel" type="id" />
+    <item name="scrollableTextView" type="id" />
+    <item name="root_layout" type="id" />
+    <item name="main_frame" type="id" />
+    <item name="webView" type="id" />
+    <item name="progressBar" type="id" />
+    <item name="secureWarningLayout" type="id" />
+    <item name="warningIcon" type="id" />
+    <item name="secureWarningMessage" type="id" />
+    <item name="urlOverlay" type="id" />
+    <item name="urlInput" type="id" />
+    <item name="goButton" type="id" />
+    <item name="closeSearchButton" type="id" />
+    <item name="recyclerView" type="id" />
+    <item name="emptyView" type="id" />
+</resources>

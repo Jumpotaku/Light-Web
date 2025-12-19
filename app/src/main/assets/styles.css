@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-surface: #1c1b1f;
+  --md-sys-color-on-surface: #e6e1e5;
+  --md-sys-color-surface-variant: #2a292d;
+  --md-sys-color-outline: #938f99;
+}
+
+body {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+
+  background-color: #1c1b1f; /* fallback */
+  background-color: var(--md-sys-color-surface);
+
+  color: #e6e1e5; /* fallback */
+  color: var(--md-sys-color-on-surface);
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  padding: 16px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+
+  color: #6750a4; /* fallback */
+  color: var(--md-sys-color-primary);
+}
+
+.icons {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+  gap: 16px;
+
+  -webkit-animation: fadeInIcons 1.5s ease-in-out;
+  animation: fadeInIcons 1.5s ease-in-out;
+}
+
+.icon {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+
+  cursor: pointer;
+  padding: 20px;
+
+  background-color: #2a292d; /* fallback */
+  background-color: var(--md-sys-color-surface-variant);
+
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+
+  -webkit-transition: -webkit-transform 0.2s ease-in-out, background-color 0.3s ease;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+
+  width: 120px;
+  text-align: center;
+}
+
+.icon span {
+  margin-top: 10px;
+  font-size: 0.9em;
+
+  color: #e6e1e5; /* fallback */
+  color: var(--md-sys-color-on-surface);
+}
+
+.icon:hover {
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+  background-color: #38373b;
+}
+
+form {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#search {
+  padding: 14px 16px;
+  font-size: 1em;
+  border: 1px solid #938f99; /* fallback */
+  border: 1px solid var(--md-sys-color-outline);
+
+  border-radius: 28px;
+
+  background-color: #2a292d; /* fallback */
+  background-color: var(--md-sys-color-surface-variant);
+
+  color: #e6e1e5; /* fallback */
+  color: var(--md-sys-color-on-surface);
+
+  width: 70%;
+  outline: none;
+
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+#search:focus {
+  border: 2px solid #6750a4; /* fallback */
+  border: 2px solid var(--md-sys-color-primary);
+}
+
+button {
+  padding: 14px 24px;
+
+  background-color: #6750a4; /* fallback */
+  background-color: var(--md-sys-color-primary);
+
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #7f67be;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+/* アニメーション */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; -webkit-transform: translateY(-20px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@-webkit-keyframes fadeInIcons {
+  from { opacity: 0; -webkit-transform: scale(0.5); }
+  to   { opacity: 1; -webkit-transform: scale(1); }
+}
+@keyframes fadeInIcons {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .icons {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .icon {
+    width: 80%;
+  }
+
+  #search {
+    width: 70%;
+  }
+
+  button {
+    width: 20%;
+  }
+}

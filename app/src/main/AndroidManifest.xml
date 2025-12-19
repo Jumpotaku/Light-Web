@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- 必要なパーミッションのみ保持 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- ストレージ（Android 10 以降は scoped storage なので READ/WRITE は非推奨） -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" /> <!-- ダウンロードマネージャー -->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" /> <!-- カメラ・マイク（WebView 用） -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LightWeb20"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity_background"
+            android:exported="false" />
+        <activity
+            android:name=".activity_theme_menu"
+            android:exported="false" />
+        <activity
+            android:name=".activity_font"
+            android:exported="false" />
+        <activity
+            android:name=".ThemeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DownloadHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DownloadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".item_download"
+            android:exported="false" />
+        <activity
+            android:name=".download_history"
+            android:exported="false"
+            android:label="@string/title_activity_download_history"
+            android:theme="@style/Theme.LightWeb20" />
+        <activity
+            android:name=".DesktopWebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TabActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LicenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawerLayout"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" /> <!-- ▼ メインアクティビティ（フローティング解除済み） -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- スマホ起動カテゴリのみ：TV用 LEANBACK 削除 -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

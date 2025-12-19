@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 完全な黒ではなく、ダークグレー寄り -->
+    <color name="ic_banner_background">#121212</color>
+
+    <!-- 半透明ダーク -->
+    <color name="ic_banner_background_semi">#CC121212</color>
+
+    <!-- アクセント用の暗めグレー -->
+    <color name="ic_banner_background_dark_gray">#1E1E1E</color>
+</resources>

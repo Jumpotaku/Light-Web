@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common -->
+    <string name="app_name">Light Web 2.0</string>
+    <string name="text">Hello World</string>
+
+    <!-- File 1 -->
+    <string name="title_round_history">Downloads History</string>
+    <string name="cd_downloads_icon">Downloads icon</string>
+    <string name="downloads_title">Download History</string>
+    <string name="empty_history">No history</string>
+
+    <!-- File 2 -->
+    <string name="project_title">Light-Web2.0 Project</string>
+    <string name="image_desc">Profile image</string>
+    <string name="programmer_label">ジャンオタ</string>
+    <string name="love_blue_archive">I love Blue Archive!</string>
+    <string name="chatgpt_label">ChatGPT</string>
+    <string name="copilot_label">Copilot</string>
+    <string name="dev_message_title">Developers message</string>
+    <string name="dev_message_body">I created this app because I wanted to browse websites comfortably on old phones (for example Android 6.0). The app is still evolving, and I plan to add more features in future updates. Thank you for your support.</string>
+
+    <!-- File 3 -->
+    <string name="secure_warning_message">This site is not encrypted.</string>
+    <string name="hint_url_input">Enter URL</string>
+    <string name="go_button_text">Go</string>
+    <string name="menu_settings_cd">Settings</string>
+    <string name="menu_download_cd">Downloads</string>
+    <string name="pc_mode_cd">PC Mode</string>
+
+    <!-- Keys from previous settings.xml (kept to avoid missing resource problems) -->
+    <string name="title_settings">Settings</string>
+    <string name="js_settings_title">JavaScript Settings</string>
+    <string name="js_enable_text">Enable JavaScript</string>
+    <string name="cd_js_icon">JavaScript icon</string>
+    <string name="home_settings_title">Home Settings</string>
+    <string name="home_first_google_text">Set first home to Google</string>
+    <string name="cd_home_icon">Home icon</string>
+    <string name="save_settings_text">Save settings</string>
+    <string name="theme_text">theme</string>
+    <string name="cd_save_icon">Save icon</string>
+    <string name="license_text">License</string>
+    <string name="cd_license_icon">License icon</string>
+    <string name="credit_text">Credits</string>
+    <string name="cd_credit_icon">Credits icon</string>
+</resources>

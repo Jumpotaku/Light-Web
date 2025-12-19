@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 共通（以前の設定で使っているかもしれないキーも念のため含めています） -->
+    <string name="app_name">Light Web 2.0</string>
+    <string name="text">こんにちは 世界</string>
+
+    <!-- ファイル1 -->
+    <string name="title_round_history">ラウンド履歴</string>
+    <string name="cd_downloads_icon">ダウンロード アイコン</string>
+    <string name="downloads_title">ダウンロード履歴</string>
+    <string name="empty_history">履歴はありません</string>
+
+    <!-- ファイル2 -->
+    <string name="project_title">Light-Web2.0 Project</string>
+    <string name="image_desc">プロフィール画像</string>
+    <string name="programmer_label">ジャンオタ</string>
+    <string name="love_blue_archive">I love Blue Archive!</string>
+    <string name="chatgpt_label">ChatGPT</string>
+    <string name="copilot_label">Copilot</string>
+    <string name="dev_message_title">開発者のメッセージ</string>
+    <string name="dev_message_body">私は古いスマホ 例えば Android 6.0 古いバージョンのスマホでブラウザを快適に見たいなと思い このアプリを作成しました。このアプリはまだ発展途上ですが バージョンアップでどんどん機能を追加する予定です。今後ともよろしくお願いします</string>
+
+    <!-- ファイル3 -->
+    <string name="secure_warning_message">このサイトは暗号化されていません。</string>
+    <string name="hint_url_input">URLを入力</string>
+    <string name="go_button_text">続行</string>
+    <string name="menu_settings_cd">設定</string>
+    <string name="menu_download_cd">ダウンロード</string>
+    <string name="pc_mode_cd">PCモード</string>
+
+    <!-- 以前の会話で用意した settings.xml 用キー（安全のため残しておく） -->
+    <string name="title_settings">設定</string>
+    <string name="js_settings_title">JavaScript 設定</string>
+    <string name="js_enable_text">JavaScript を有効にする</string>
+    <string name="cd_js_icon">JavaScript アイコン</string>
+    <string name="home_settings_title">ホーム設定</string>
+    <string name="home_first_google_text">最初のホームを Google にする</string>
+    <string name="cd_home_icon">ホーム アイコン</string>
+    <string name="save_settings_text">設定を保存</string>
+    <string name="cd_save_icon">保存アイコン</string>
+    <string name="license_text">ライセンス</string>
+    <string name="theme_text">テーマ</string>
+    <string name="cd_license_icon">ライセンス アイコン</string>
+    <string name="credit_text">クレジット</string>
+    <string name="cd_credit_icon">クレジット アイコン</string>
+</resources>
