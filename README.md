@@ -48,4 +48,4 @@
 ## 🚀 ビルド方法（例）
 
 ```bash
-git clone https://github.com/ユーザー名/リポジトリ名.git
+git clone [https://github.com/ユーザー名/リポジトリ名.git](https://github.com/Jumpotaku/Light-Web.git)
