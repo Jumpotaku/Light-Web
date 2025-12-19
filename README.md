@@ -21,7 +21,7 @@
 ## ✨ 特徴
 
 - 古い Android 端末でも動作が軽い  
-- Android 5.0 以上対応  
+- Android 6.0 以上対応  
 - シンプルで無駄のない UI  
 - 低メモリ・低負荷設計  
 - オープンソース（自由に改変可能）
@@ -30,7 +30,7 @@
 
 ## 🔧 動作環境
 
-- **対応 OS**: Android 5.0 以上  
+- **対応 OS**: Android 6.0 以上  
 - **対象デバイス**: 古いスマートフォン / タブレット含む  
 
 ---
@@ -48,4 +48,4 @@
 ## 🚀 ビルド方法（例）
 
 ```bash
-git clone [https://github.com/ユーザー名/リポジトリ名.git](https://github.com/Jumpotaku/Light-Web.git)
+git clone https://github.com/Jumpotaku/Light-Web.git
