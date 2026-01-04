@@ -48,6 +48,3 @@ This project is open source.
 
 ```bash
 git clone https://github.com/Jumpotaku/Light-Web.git
-
-
-
