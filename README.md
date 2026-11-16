@@ -20,16 +20,16 @@ This project is **open source**, allowing anyone to freely view and modify the s
 ##  Features
 
 - Runs smoothly even on older Android devices  
-- Supports Android 6.0 and above  
+- Supports Android 5.0 and above  
 - Simple, clean, and minimal UI  
 - Low memory usage and low system load  
+- **Light　AI BETA**: Integrated AI features to make browsing even smarter and easier  
 - Open source (freely customizable)
-
 ---
 
 ##  System Requirements
 
-- **Supported OS**: Android 6.0 and above  
+- **Supported OS**: Android 5.0 and above  
 - **Target Devices**: Includes older smartphones and tablets  
 
 ---
