@@ -23,7 +23,8 @@ This project is **open source**, allowing anyone to freely view and modify the s
 - Supports Android 5.0 and above  
 - Simple, clean, and minimal UI  
 - Low memory usage and low system load  
-- **Light　AI BETA**: Integrated AI features to make browsing even smarter and easier  
+- **Light　AI BETA**: Integrated AI features to make browsing even smarter and easier
+- **AI Features**: Android 6.0 or higher is required to use the AI features. Additionally, please note that older low-end devices that do not meet the hardware requirements are excluded from support. Sorry for the ambiguity!
 - Open source (freely customizable)
 ---
 
