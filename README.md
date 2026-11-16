@@ -1,13 +1,13 @@
 # LightWeb 2.0
 
 A **lightweight and fast web browser** designed for **smooth browsing even on older Android devices**.  
-Supports **Android 6.0 and above**.
+Supports **Android 5.0 and above**.
 
 This project is **open source**, allowing anyone to freely view and modify the source code.
 
 ---
 
-## 📱 Screenshots
+##  Screenshots
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5c50cb33-8225-4110-bdca-4a9aa7fb6bd0" width="30%" />
@@ -17,7 +17,7 @@ This project is **open source**, allowing anyone to freely view and modify the s
 
 ---
 
-## ✨ Features
+##  Features
 
 - Runs smoothly even on older Android devices  
 - Supports Android 6.0 and above  
@@ -27,14 +27,14 @@ This project is **open source**, allowing anyone to freely view and modify the s
 
 ---
 
-## 🔧 System Requirements
+##  System Requirements
 
 - **Supported OS**: Android 6.0 and above  
 - **Target Devices**: Includes older smartphones and tablets  
 
 ---
 
-## 📂 Open Source
+##  Open Source
 
 This project is open source.
 
@@ -44,7 +44,7 @@ This project is open source.
 
 ---
 
-## 🚀 Build (Example)
+##  Build (Example)
 
 ```bash
 git clone https://github.com/Jumpotaku/Light-Web.git
